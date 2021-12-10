@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Is leap year</title>
+</head>
+<body>
+<script>
+
+    //      Đề bài:
+    //    Những năm chia hết cho 4 mà không chia hết cho 100 là năm nhuận
+    //    Những năm chia hết cho 100 mà không chia hết cho 400 thì KHÔNG PHẢI là năm nhuận
+    //    Những năm chia hết đồng thời cho 100 và 400 là năm nhuận
+
+    let year = parseInt(prompt("Enter a year:"));
+    let isLeapYear;
+
+    let isDividedBy4 = (year % 4 === 0);
+    let isDividedBy100 = (year % 100 === 0);
+    let isDividedBy400 = (year % 400 === 0);
+
+    if (isDividedBy4) {
+        if (isDividedBy100) {
+            if (isDividedBy400) {
+                isLeapYear = true;
+            } else {
+                isLeapYear = false;
+            }
+        } else {
+            isLeapYear = true;
+        }
+    } else {
+        isLeapYear = false;
+    }
+
+    if (isLeapYear) {
+        alert(year + ' is a leap year!');
+    } else {
+        alert(year + ' is not a leap year!');
+    }
+
+</script>
+</body>
+</html>
